@@ -4,7 +4,7 @@
   "description": "Online shopping website with nodejs",
   "main": "app.js",
   "engines": {
-    "node":"14.x"
+    "node":"16.x or higher"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
