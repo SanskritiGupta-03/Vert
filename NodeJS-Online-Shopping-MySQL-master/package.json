@@ -1,0 +1,31 @@
+{
+  "name": "online-shopping",
+  "version": "1.0.0",
+  "description": "Online shopping website with nodejs",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon app.js",
+    "start-server": "node app.js"
+  },
+  "author": "Karthik Nayak",
+  "license": "ISC",
+  "devDependencies": {
+    "nodemon": "^2.0.3"
+  },
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.19.0",
+    "cookie-session": "^2.0.0",
+    "dotenv": "^8.2.0",
+    "ejs": "^3.1.2",
+    "express": "^4.17.0",
+    "express-handlebars": "^4.0.3",
+    "mysql2": "^2.1.0",
+    "nodemon": "^2.0.3",
+    "oracledb": "^6.2.0",
+    "pug": "^2.0.4",
+    "sequelize": "^6.35.1",
+    "serve-favicon": "^2.5.0"
+  }
+}
