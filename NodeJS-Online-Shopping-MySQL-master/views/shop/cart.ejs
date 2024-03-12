@@ -1,0 +1,50 @@
+<%- include('../includes/header.ejs') %>
+<link rel="stylesheet" href="/css/cart.css" />
+<style>
+    #emptycartimg{
+        width: 100%;
+        height:640px;
+    }
+    #billbox{
+        text-align: center;
+        border: 2px solid black;
+        height: 40px;
+        padding-top: 10px;
+        margin-bottom: 20px;
+        margin-top: 20px;
+    }
+</style>
+</head>
+
+<body>
+ <%- include('../includes/navigation.ejs') %>
+ <main>
+ <% if (products.length > 0) { %>
+  <ul class="cart__item-list">
+   <% products.forEach(p => { %>
+    <li class="cart__item">
+     <h1><%= p.title %></h1>
+     <h2>Quantity: <%= p.cartItem.quantity %></h2>
+     <h2>Price: <%= p.cartItem.cost %></h2>
+     <form action="/cart-delete-item" method="POST">
+      <input type="hidden" value="<%= p.id %>" name="productId">
+      <button class="btn danger" type="submit">Delete</button>
+     </form>
+    </li>
+   <% }); %>
+  </ul>
+  <hr>
+  <div id="billbox">
+    Total Amount: $<%let pprice=0; products.forEach(p => {pprice = pprice + parseInt(p.cartItem.cost)}) %>
+    <%= pprice %>
+  </div>
+  <div class="centered">
+   <form action="/create-order" method="POST">
+    <button type="submit" class="btn">Order Now!</button>
+   </form>
+  </div>
+ <% } else { %>
+  <img id="emptycartimg" src="https://www.seensil.com/assets/images/cart-empty.jpg" alt="The Cart is Empty"/>
+ <% } %>
+ </main>
+ <%- include('../includes/footer.ejs') %>
